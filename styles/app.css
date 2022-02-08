@@ -40,7 +40,7 @@ body {
   /* border: 1px solid black; */
 }
 .menu-list-left.location {
-  flex-grow: 1;
+  flex-grow: 2;
 }
 .logo {
   width: 36px;
@@ -130,4 +130,32 @@ body {
 }
 .location:hover > .area::after {
   background-color: #ff8c42;
+}
+
+/* PLACE LINKS */
+.place {
+  height: 30px;
+  font-size: 0.7em;
+  width: 100%;
+}
+
+.place-links {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0 10%;
+}
+.place-links span {
+  /* margin-left: 10px; */
+  color: #04030f;
+  opacity: 0.6;
+}
+.place-links span a {
+  text-decoration: none;
+  color: #04030f;
+  opacity: 0.4;
+}
+.place-links span a::after {
+  content: "/";
+  margin: 0 5px;
 }
