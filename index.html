@@ -18,6 +18,156 @@
     <link href="./styles/app.css" rel="stylesheet" />
   </head>
   <body>
+    <header class="header flex align-items-center">
+      <section class="menu-list-left flex align-items-center">
+        <div>
+          <img
+            src="./assets/images/swiggy-logo.svg"
+            alt="logo"
+            class="logo cursor-pointer"
+          />
+        </div>
+        <div class="location flex cursor-pointer">
+          <span> Bazar Samiti</span>
+          <span>Roy Laxmi Niwas, Bazar S...</span>
+          <span class="icon">
+            <img src="./assets/icons/down-arrow.svg" alt="down-arrow" />
+          </span>
+        </div>
+      </section>
+      <section class="menu-list-right">
+        <ul class="nav-links flex align-items-center">
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><img src="./assets/icons/search.svg" alt="search" />
+              </span>
+              <span>Search</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><img src="./assets/icons/offer.svg" alt="offer"
+              /></span>
+              <span> Offers </span>
+              <span class="sup">New</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><img src="./assets/icons/help.svg" alt="help"
+              /></span>
+              <span> Help </span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><img src="./assets/icons/sign-in.svg" alt="sign-in"
+              /></span>
+              <span> Sign In </span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><img src="./assets/icons/cart.svg" alt="down-arrow"
+              /></span>
+              <span> Cart </span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </header>
+    <section class="place">
+      <div class="place-links flex align-items-center">
+        <span>
+          <a href="#">Home</a>
+        </span>
+        <span>
+          <a href="#">Patna</a>
+        </span>
+        <span>
+          <a href="#">Sri Krishnapuri</a>
+        </span>
+        <span>Black Eye Cafe & Kitchen</span>
+      </div>
+    </section>
+
+
+    <section class="restaurant">
+      <div class="restaurant-data">
+        <div class="restaurant-thumbnail">
+          <img src="./assets/images/thumbnail.jpeg" alt="dish item" />
+        </div>
+        <div class="restaurant-info">
+          <h3>Black Eye Cafe & Kitchen</h3>
+          <p>
+            <span>Closes Soon</span>
+            <span>Chinese, Tandoor</span>
+          </p>
+          <p>Boring Road, Sri Krishna Puri</p>
+          <div>
+            <div>
+              <div>
+                <!-- <i class="fas fa-star"></i> -->
+                <img class="icon" src="./assets/icons/star.svg" alt="" />
+                <span>4.0</span>
+              </div>
+              <div><span>20+ ratings</span></div>
+            </div>
+            <div>
+              <div>
+                <span>40 mins</span>
+              </div>
+              <div><span>Delivery Time</span></div>
+            </div>
+            <div>
+              <div>
+                <span>&#8377; 250</span>
+              </div>
+              <div><span>Cost for two</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="restaurant-offer">
+          <div>offer</div>
+          <div>
+            <img src="./assets/icons/offer.svg" class="icon" />
+            <span>20% off | Use code PARTY</span>
+          </div>
+          <div>
+            <img src="./assets/icons/offer.svg" class="icon" />
+            <span
+              >30% off up to ₹150 on orders above ₹400 | Use code JUMBO</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="menu-filter">
+        <div class="dish-search">
+          <img src="./assets/icons/search.svg" alt="Seach Dish" class="icon" />
+          <input type="text" placeholder="Seach for dishes..." />
+        </div>
+        <div class="dish-type">
+          <input type="checkbox" id="isVeg" name="isVeg" value="false" />
+          <label for="isVeg">Veg Only </label>
+        </div>
+        <div class="dish-fav">
+          <img
+            src="./assets/icons/favorite.svg"
+            alt="Favorite Your Dish"
+            class="icon"
+          />
+          <span class="favorite"> Favorite</span>
+        </div>
+      </div>
+    </section>
+
+
     <main class="dish">
       <div class="dish-items">
         <div class="dish-nav-links">
@@ -223,154 +373,10 @@
 
         
         
-    <section class="restaurant">
-      <div class="restaurant-data">
-        <div class="restaurant-thumbnail">
-          <img src="./assets/images/thumbnail.jpeg" alt="dish item" />
-        </div>
-        <div class="restaurant-info">
-          <h3>Black Eye Cafe & Kitchen</h3>
-          <p>
-            <span>Closes Soon</span>
-            <span>Chinese, Tandoor</span>
-          </p>
-          <p>Boring Road, Sri Krishna Puri</p>
-          <div>
-            <div>
-              <div>
-                <!-- <i class="fas fa-star"></i> -->
-                <img class="icon" src="./assets/icons/star.svg" alt="" />
-                <span>4.0</span>
-              </div>
-              <div><span>20+ ratings</span></div>
-            </div>
-            <div>
-              <div>
-                <span>40 mins</span>
-              </div>
-              <div><span>Delivery Time</span></div>
-            </div>
-            <div>
-              <div>
-                <span>&#8377; 250</span>
-              </div>
-              <div><span>Cost for two</span></div>
-            </div>
-          </div>
-        </div>
-        <div class="restaurant-offer">
-          <div>offer</div>
-          <div>
-            <img src="./assets/icons/offer.svg" class="icon" />
-            <span>20% off | Use code PARTY</span>
-          </div>
-          <div>
-            <img src="./assets/icons/offer.svg" class="icon" />
-            <span
-              >30% off up to ₹150 on orders above ₹400 | Use code JUMBO</span
-            >
-          </div>
-        </div>
-      </div>
-      <div class="menu-filter">
-        <div class="dish-search">
-          <img src="./assets/icons/search.svg" alt="Seach Dish" class="icon" />
-          <input type="text" placeholder="Seach for dishes..." />
-        </div>
-        <div class="dish-type">
-          <input type="checkbox" id="isVeg" name="isVeg" value="false" />
-          <label for="isVeg">Veg Only </label>
-        </div>
-        <div class="dish-fav">
-          <img
-            src="./assets/icons/favorite.svg"
-            alt="Favorite Your Dish"
-            class="icon"
-          />
-          <span class="favorite"> Favorite</span>
-        </div>
-      </div>
-    </section>
+    
         
         
    
-    <header class="header flex align-items-center">
-      <section class="menu-list-left flex align-items-center">
-        <div>
-          <img
-            src="./assets/images/swiggy-logo.svg"
-            alt="logo"
-            class="logo cursor-pointer"
-          />
-        </div>
-        <div class="location flex cursor-pointer">
-          <span> Bazar Samiti</span>
-          <span>Roy Laxmi Niwas, Bazar S...</span>
-          <span class="icon">
-            <img src="./assets/icons/down-arrow.svg" alt="down-arrow" />
-          </span>
-        </div>
-      </section>
-      <section class="menu-list-right">
-        <ul class="nav-links flex align-items-center">
-          <li>
-            <a href="#">
-              <span class="icon"
-                ><img src="./assets/icons/search.svg" alt="search" />
-              </span>
-              <span>Search</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="icon"
-                ><img src="./assets/icons/offer.svg" alt="offer"
-              /></span>
-              <span> Offers </span>
-              <span class="sup">New</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="icon"
-                ><img src="./assets/icons/help.svg" alt="help"
-              /></span>
-              <span> Help </span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span class="icon"
-                ><img src="./assets/icons/sign-in.svg" alt="sign-in"
-              /></span>
-              <span> Sign In </span>
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <span class="icon"
-                ><img src="./assets/icons/cart.svg" alt="down-arrow"
-              /></span>
-              <span> Cart </span>
-            </a>
-          </li>
-        </ul>
-      </section>
-    </header>
-    <section class="place">
-      <div class="place-links flex align-items-center">
-        <span>
-          <a href="#">Home</a>
-        </span>
-        <span>
-          <a href="#">Patna</a>
-        </span>
-        <span>
-          <a href="#">Sri Krishnapuri</a>
-        </span>
-        <span>Black Eye Cafe & Kitchen</span>
-      </div>
-    </section>
+    
   </body>
 </html>
