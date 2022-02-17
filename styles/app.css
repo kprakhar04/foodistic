@@ -14,6 +14,9 @@
   --dish-item-button-padding-top-bottom: 7px;
   --dish-item-button-padding-left-right: 8px;
   --box-shadow-point-25: rgba(0, 0, 0, 0.25);
+  --button-hover-box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.25);
+  --grey-shade-border: 0.5px solid var(--grey-text);
+  --restaurant-section-height: 250px;
 }
 
 * {
@@ -27,9 +30,11 @@ body {
   font-weight: 400;
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
 .sub-title {
+  text-transform: uppercase;
   font-weight: 500;
   font-size: 0.9rem;
   color: var(--grey-text);
@@ -47,11 +52,70 @@ body {
 .flex {
   display: flex;
 }
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
 .align-items-center {
   align-items: center;
 }
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-space-between {
+  justify-content: space-between;
+}
+.justify-content-space-around {
+  justify-content: space-around;
+}
 .cursor-pointer {
   cursor: pointer;
+}
+.hide {
+  display: none;
+}
+
+.btn {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  color: var(--blue-bg);
+  text-transform: uppercase;
+  font-size: inherit;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  border: 1px solid var(--blue-bg);
+  border-radius: 5px;
+  padding: var(--dish-item-button-padding-top-bottom)
+    var(--dish-item-button-padding-left-right);
+}
+.quantity-change-btn {
+  margin: 0 1rem;
+  width: 70px;
+  height: 30px;
+  border: var(--grey-shade-border);
+  border-radius: 5px;
+  color: var(--primary-color);
+  column-gap: 0.4rem;
+}
+
+.quantity-change-btn > .decrement {
+  color: var(--grey-text);
+  opacity: 0.9;
+  cursor: pointer;
+}
+.quantity-change-btn > .quantity {
+  margin: 0 0.25rem;
+  font-size: 0.9rem;
+}
+.quantity-change-btn > .increment {
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+.quantity-change-btn > .increment:hover {
+  font-weight: 500;
+  transform: scale(1.5);
 }
 
 /* HEADER */
@@ -135,7 +199,7 @@ body {
   position: absolute;
   top: 25px;
   right: -30px;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -176,8 +240,11 @@ body {
 /* RESTAURANT DETAILS */
 
 .restaurant {
-  position: relative;
-  height: 250px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: var(--restaurant-section-height);
   background-color: var(--black-bg);
   color: var(--white-text);
 }
@@ -246,6 +313,7 @@ body {
 
 .restaurant-offer {
   margin-left: 0;
+  margin-right: 1rem;
   padding: 10px;
   border: 1px solid var(--grey-text);
   border-top: none;
@@ -374,14 +442,15 @@ body {
 .dish-type input[type="checkbox"]:checked + label::before {
   content: "\002714";
   color: var(--white-text);
-  background-color: var(--blue-bg);
+  background-color: var(--primary-color);
   display: flex;
+  background-color: var(--blue-bg);
   justify-content: center;
   align-items: center;
 }
 
 .dish-type:hover label {
-  color: var(--blue-bg);
+  color: var(--primary-color);
   font-weight: 700;
 }
 
@@ -442,7 +511,7 @@ body {
   align-self: flex-start;
   margin-left: 10%;
   position: sticky;
-  top: var(--dish-top-padding);
+  top: calc(var(--dish-top-padding) + var(--restaurant-section-height));
   border-right: 0.8px solid var(--grey-text);
   padding-top: var(--dish-top-padding);
 }
@@ -492,7 +561,6 @@ body {
 }
 
 .dish-group .sub-title {
-  text-transform: uppercase;
   padding: 0.5rem 0;
 }
 
@@ -504,7 +572,7 @@ body {
   margin-top: 1rem;
 }
 .dish-item:not(:last-child) {
-  border-bottom: 0.5px solid var(--grey-text);
+  border-bottom: var(--grey-shade-border);
 }
 .dish-item > div:first-child * {
   margin-top: 0.8rem;
@@ -538,18 +606,6 @@ body {
 
 .dish-item > div:last-child > button {
   width: 90px;
-  height: 100%;
-  background-color: transparent;
-  text-transform: uppercase;
-  color: var(--blue-bg);
-  font-weight: 500;
-  font-size: inherit;
-  letter-spacing: 0.3px;
-  cursor: pointer;
-  border: 1px solid var(--blue-bg);
-  border-radius: 5px;
-  padding: var(--dish-item-button-padding-top-bottom)
-    var(--dish-item-button-padding-left-right);
 }
 .dish-item > div:last-child > button:hover {
   background-color: var(--blue-bg);
@@ -563,29 +619,92 @@ body {
 .dish-cart {
   align-self: flex-start;
   position: sticky;
-  top: var(--dish-top-padding);
+  top: calc(var(--dish-top-padding) + var(--restaurant-section-height));
   padding-top: var(--dish-top-padding);
 }
 
-.dish-cart > div {
+.dish-cart-empty {
   display: flex;
   flex-direction: column;
   row-gap: 40px;
 }
-.dish-cart > div h3 {
+.dish-cart-empty h3 {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--grey-text);
 }
-.dish-cart > div img {
+.dish-cart-empty img {
   height: 212px;
   width: 70%;
   margin-bottom: 20px;
 }
-.dish-cart > div p {
+.dish-cart-empty p {
   opacity: 0.9;
   color: var(--grey-text);
   word-spacing: 2px;
   line-height: 1.2em;
   max-width: 218px;
+}
+
+/* dish-cart-with-items */
+
+.dish-cart-header {
+  margin-bottom: 1rem;
+}
+.dish-cart-header > h3 {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.dish-cart-items {
+  width: 400px;
+  row-gap: 1.2rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: var(--grey-shade-border);
+}
+.dish-cart-item > div {
+  flex-basis: 50%;
+}
+
+.dish-cart-item > div:first-child > h6 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0 0.7rem;
+}
+
+.dish-cart-item p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  opacity: 0.8;
+}
+.dish-cart-subtotal {
+  width: 400px;
+  margin-bottom: 1.5rem;
+}
+.dish-cart-subtotal > h4 {
+  font-size: 1.2rem;
+  letter-spacing: 0.05rem;
+  flex-grow: 1;
+}
+.dish-cart-subtotal > span {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.dish-cart-checkout-btn {
+  width: 400px;
+}
+.dish-cart-checkout-btn > button {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  letter-spacing: 0.1rem;
+  background-color: var(--primary-color);
+  color: var(--white-text);
+  border: 1px solid var(--primary-color);
+  opacity: 0.9;
+  transition: opacity 200ms ease-in;
+}
+.dish-cart-checkout-btn > button:hover {
+  opacity: 1;
+  box-shadow: var(--button-hover-box-shadow);
 }
