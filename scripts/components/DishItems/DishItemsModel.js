@@ -1,4 +1,4 @@
-import { apiCall as fetchDishItems } from "../../services/apiCall.js";
+import { apiCall as fetchDishItems } from "../../utility/apiCall.js";
 
 const DISH_ITEMS_ENDPOINT = "dishItems.json";
 

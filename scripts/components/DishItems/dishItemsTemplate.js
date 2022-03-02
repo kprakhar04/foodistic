@@ -1,4 +1,4 @@
-import { title, getIcon, getCurrencySymbol } from "../../services/helper.js";
+import { title, getIcon, getCurrencySymbol } from "../../utility/helper.js";
 
 export const dishItemsTemplate = function (dishCategories, dishItems) {
   let res = "";

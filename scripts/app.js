@@ -4,6 +4,9 @@ import { DishItemsController } from "./components/DishItems/DishItemsController.
 import { CartItemsController } from "./components/CartItems/CartItemsController.js";
 import { CartItemsModel } from "./components/CartItems/CartItemsModel.js";
 import { CartItemsView } from "./components/CartItems/CartItemsView.js";
+import { OrderItemsModel } from "./components/OrderItems/OrderItemsModel.js";
+import { OrderItemsView } from "./components/OrderItems/OrderItemsView.js";
+import { OrderItemsController } from "./components/OrderItems/OrderItemsController.js";
 import {
   centralController,
   controllerNames,
@@ -12,9 +15,10 @@ import {
 window.addEventListener("DOMContentLoaded", () => {
   const { model: dishItemsModel, controller: dishItemsController } =
     instantiateMVC(DishItemsModel, DishItemsView, DishItemsController);
-  centralController[controllerNames["DISH_ITEMS_CONTROLLER"]] =
-    dishItemsController;
-
+  registerController(
+    controllerNames["DISH_ITEMS_CONTROLLER"],
+    dishItemsController
+  );
   dishItemsModel
     .loadDishItems()
     .then(() => {
@@ -31,8 +35,21 @@ window.addEventListener("DOMContentLoaded", () => {
       CartItemsView,
       CartItemsController
     );
-    centralController[controllerNames["CART_ITEMS_CONTROLLER"]] =
-      cartItemsController;
+    registerController(
+      controllerNames["CART_ITEMS_CONTROLLER"],
+      cartItemsController
+    );
+
+    const { controller: orderItemsController } = instantiateMVC(
+      OrderItemsModel,
+      OrderItemsView,
+      OrderItemsController
+    );
+
+    registerController(
+      controllerNames["ORDER_ITEMS_CONTROLLER"],
+      orderItemsController
+    );
   }
 
   function instantiateMVC(Model, View, Controller) {
@@ -43,5 +60,8 @@ window.addEventListener("DOMContentLoaded", () => {
       view,
     });
     return { model, view, controller };
+  }
+  function registerController(controllerName, controllerInstance) {
+    centralController[controllerName] = controllerInstance;
   }
 });

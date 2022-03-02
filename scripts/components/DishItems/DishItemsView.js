@@ -1,15 +1,14 @@
 import { htmlElements as getElement } from "../../constants/htmlElements.js";
 import { dataAttribute } from "../../constants/dataAttributes.js";
-import { getKeys } from "../../services/helper.js";
+import { getKeys } from "../../utility/helper.js";
 import {
   dishItemsTemplate,
   dishNavLinksTemplate,
   dishesTemplate,
-} from "./dishItemsHelper.js";
+} from "./dishItemsTemplate.js";
 
 export const DishItemsView = function (spec) {
   this.dishesContainer = getElement["dishItemsContainer"];
-  this.controller = null;
 };
 
 DishItemsView.prototype.bindAddToCart = function (handler) {

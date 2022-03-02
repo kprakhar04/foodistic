@@ -30,7 +30,9 @@ export const createElement = (elem, payload) => {
       element.innerHTML = payload.html;
     }
     if (payload.class) {
-      element.classList.add(payload.class);
+      for (let className of payload.class.trim().split(" ")) {
+        element.classList.add(className);
+      }
     }
     if (payload.attrs) {
       const attributes = payload.attrs;
