@@ -34,7 +34,7 @@ export const cartItemsTemplate = function (cartItems, elements) {
     </div>
     <div class="dish-cart-checkout-btn" ${
       dataAttribute["CART_ITEMS_CLICK_LISTENER_KEY"]
-    }=${dataAttribute["CHECKOUT_BTN_CLICK_LISTENER_VALUE"]}>
+    }="${dataAttribute["CHECKOUT_BTN_CLICK_LISTENER_VALUE"]}">
     <button class="btn flex justify-content-center">Checkout →</button>
     </div>
    </div>

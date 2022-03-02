@@ -20,6 +20,7 @@ CartItemsController.prototype.handleUpdateCart = function (id, quantity) {
   const cartData = this.model.updateCart(id, quantity);
   this.view.renderCartItems(cartData);
 };
+
 CartItemsController.prototype.handleCheckout = function () {
   const cartItems = this.model.getCart();
   const orderItemsController =
@@ -28,7 +29,6 @@ CartItemsController.prototype.handleCheckout = function () {
     cartItems,
     this.handleEmptyCart.bind(this)
   );
-  console.log("Called");
 };
 
 CartItemsController.prototype.handleEmptyCart = function () {
